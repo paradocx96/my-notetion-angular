@@ -1,0 +1,5 @@
+export const environment = {
+  production: false,
+  baseApiUrl: 'https://nm-api-express.onrender.com',
+  bearerToken: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNiM2Y1NmM5NTI1NTNjNjRiNDJiODI3IiwibmFtZSI6IkRpbGFuZ2EgQWRtaW4iLCJ1c2VybmFtZSI6ImRpbGFuZ2FsYW5rZXNoYWRtaW4iLCJyb2xlIjoiYWRtaW4iLCJlbWFpbCI6ImRpbGFuZ2EuYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNjc0Mjg3NTcxLCJleHAiOjE2NzQ4OTIzNzF9.YzQdMpMXeSp7atLgUfVBSIbpK3YLO8kYD-uLaq4V_ds',
+};
