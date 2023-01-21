@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <h1>Notes</h1>
+
+  <table class="table table-dark" *ngIf="notes && notes.length > 0">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Favorite</th>
+      <th scope="col">Author</th>
+      <th scope="col">Created</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let note of notes">
+      <td>{{note._id}}</td>
+      <td>{{note.title}}</td>
+      <td>{{note.description}}</td>
+      <td>{{note.favorite}}</td>
+      <td>{{note.author}}</td>
+      <td>{{note.created}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!notes || notes.length <= 0">No Notes Founds</p>
+</div>
