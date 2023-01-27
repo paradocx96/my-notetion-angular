@@ -1,0 +1,30 @@
+<div class="container my-5">
+  <h1 class="mb-3">Create Note</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="createNote()">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title"
+                 [(ngModel)]="createNoteRequest.title">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea rows="4" class="form-control" id="description" name="description"
+                    [(ngModel)]="createNoteRequest.description"></textarea>
+        </div>
+        <div class="form-check form-switch">
+          <label class="form-check-label" for="favorite">Favorite</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="favorite" name="favorite"
+                 [(ngModel)]="createNoteRequest.favorite">
+        </div>
+
+        <br/>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>

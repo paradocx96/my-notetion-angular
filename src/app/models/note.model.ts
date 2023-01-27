@@ -6,3 +6,9 @@ export interface Note {
   author: string,
   created: string
 }
+
+export interface NoteCreate {
+  title: string,
+  description: string,
+  favorite: boolean,
+}
