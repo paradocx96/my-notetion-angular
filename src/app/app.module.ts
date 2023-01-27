@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotesListComponent } from './components/notes/notes-list/notes-list.component';
 import {HttpClientModule} from "@angular/common/http";
+import { NotesCreateComponent } from './components/notes/notes-create/notes-create.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NotesEditComponent } from './components/notes/notes-edit/notes-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotesListComponent
+    NotesListComponent,
+    NotesCreateComponent,
+    NotesEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
