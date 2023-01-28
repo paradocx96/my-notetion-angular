@@ -1,7 +1,7 @@
 <div class="container my-5">
   <h1>Notes</h1>
 
-  <button type="button" class="btn btn-dark mb-2" routerLink="notes-create">Create</button>
+  <button type="button" class="btn btn-dark mb-2" [routerLink]="['/notes','create']">Create</button>
 
   <table class="table table-dark" *ngIf="notes && notes.length > 0">
     <thead>
@@ -12,6 +12,7 @@
       <th scope="col">Favorite</th>
       <th scope="col">Author</th>
       <th scope="col">Created</th>
+      <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +23,9 @@
       <td>{{note.favorite}}</td>
       <td>{{note.author}}</td>
       <td>{{note.created}}</td>
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/notes','edit',note._id]">View</button>
+      </td>
     </tr>
     </tbody>
   </table>
