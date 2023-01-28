@@ -1,1 +1,50 @@
-<p>notes-edit works!</p>
+<div class="container my-5">
+  <h1 class="mb-3">Edit Note</h1>
+
+  <div class="row">
+    <div class="col-6">
+      <form #form="ngForm" (ngSubmit)="updateNote()">
+        <div class="mb-3">
+          <label for="id" class="form-label">Id</label>
+          <input type="text" class="form-control" id="id" name="id" readonly
+                 [(ngModel)]="noteDetails._id">
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title"
+                 [(ngModel)]="noteDetails.title">
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea rows="4" class="form-control" id="description" name="description"
+                    [(ngModel)]="noteDetails.description"></textarea>
+        </div>
+        <div class="form-check form-switch mb-3">
+          <label class="form-check-label" for="favorite">Favorite</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="favorite" name="favorite"
+                 [(ngModel)]="noteDetails.favorite">
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" class="form-control" id="author" name="author" readonly
+                 [(ngModel)]="noteDetails.author">
+        </div>
+        <div class="mb-3">
+          <label for="createdAt" class="form-label">Created At</label>
+          <input type="text" class="form-control" id="createdAt" name="createdAt" readonly
+                 [(ngModel)]="noteDetails.createdAt">
+        </div>
+        <div class="mb-3">
+          <label for="updatedAt" class="form-label">Updated At</label>
+          <input type="text" class="form-control" id="updatedAt" name="updatedAt" readonly
+                 [(ngModel)]="noteDetails.updatedAt">
+        </div>
+
+        <br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-danger ms-2"
+                (click)="deleteNote(noteDetails._id)">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
