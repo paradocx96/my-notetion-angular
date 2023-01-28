@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Note, NoteCreate} from "../../../models/note.model";
+import {NoteCreateUpdate} from "../../../models/note.model";
 import {NotesService} from "../../../services/notes.service";
 import {Router} from "@angular/router";
 
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class NotesCreateComponent implements OnInit {
 
-  createNoteRequest: NoteCreate = {
+  createNoteRequest: NoteCreateUpdate = {
     title: '',
     description: '',
     favorite: false
@@ -27,7 +27,7 @@ export class NotesCreateComponent implements OnInit {
     this.noteService.createNote(this.createNoteRequest).subscribe({
       next: (response) => {
         console.log(response)
-        this.router.navigate(['notes-list'])
+        this.router.navigate(['notes/list'])
       },
       error: (err) => {
         console.log(err)
