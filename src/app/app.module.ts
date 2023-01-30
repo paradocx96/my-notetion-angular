@@ -8,13 +8,17 @@ import {HttpClientModule} from "@angular/common/http";
 import { NotesCreateComponent } from './components/notes/notes-create/notes-create.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NotesEditComponent } from './components/notes/notes-edit/notes-edit.component';
+import { NavigationBarComponent } from './components/navigation/navigation-bar/navigation-bar.component';
+import { ErrorPageComponent } from './components/status/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesListComponent,
     NotesCreateComponent,
-    NotesEditComponent
+    NotesEditComponent,
+    NavigationBarComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
