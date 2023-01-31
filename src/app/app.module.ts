@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import {AuthGuardService} from "./services/auth-guard.service";
 import {AuthService} from "./services/auth.service";
 import {NotesService} from "./services/notes.service";
+import {NgOptimizedImage} from "@angular/common";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {NotesService} from "./services/notes.service";
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   providers: [
     AuthGuardService,
