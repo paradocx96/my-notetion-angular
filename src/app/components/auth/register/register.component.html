@@ -1,1 +1,78 @@
-<p>register works!</p>
+<div>
+  <div class="d-flex align-items-center justify-content-center" style="height:90vh">
+    <div class="w-25 bg-dark p-5 rounded-2 text-white">
+      <h2 class="mb-5 text-center">Register</h2>
+      <form #form="ngForm" (ngSubmit)="register()">
+        <div class="mb-3 text-center">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name"
+                 required minlength="4" appForbiddenName="bob"
+                 [(ngModel)]="registerRequest.name" #name="ngModel">
+
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors?.['required']">
+              Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+              Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="name.errors?.['forbiddenName']">
+              Name cannot be used.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email"
+                 [(ngModel)]="registerRequest.email" email validateEmail=true; #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+            <div *ngIf="email.errors?.['email']">
+              Primary email address is not valid.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username"
+                 required minlength="8" appForbiddenUsername="admin"
+                 [(ngModel)]="registerRequest.username" #username="ngModel">
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+            <div *ngIf="username.errors?.['required']">
+              Username is required.
+            </div>
+            <div *ngIf="username.errors?.['minlength']">
+              Username must be at least 8 characters long.
+            </div>
+            <div *ngIf="username.errors?.['appForbiddenUsername']">
+              Username cannot be used.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password"
+                 required minlength="8" appForbiddenPassword="password"
+                 [(ngModel)]="registerRequest.password" #password="ngModel">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+            <div *ngIf="password.errors?.['required']">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors?.['minlength']">
+              Password must be at least 8 characters long.
+            </div>
+            <div *ngIf="password.errors?.['appForbiddenPassword']">
+              Password cannot be used.
+            </div>
+          </div>
+        </div>
+
+        <div class="align-items-center justify-content-center d-flex">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
