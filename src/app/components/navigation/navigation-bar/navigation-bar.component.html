@@ -10,18 +10,24 @@
 
       <div class="me-auto nav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="userLoggedIn == true">
             <a class="nav-link" [routerLink]="['/notes','list']">Notes</a>
           </li>
         </ul>
       </div>
       <div class="nav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="userLoggedIn == true">
+            <a class="nav-link">{{userUsername}}</a>
+          </li>
+          <li class="nav-item" *ngIf="userLoggedIn == false">
             <a class="nav-link" [routerLink]="['/auth','register']">Register</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="userLoggedIn == false">
             <a class="nav-link" [routerLink]="['/auth','login']">Login</a>
+          </li>
+          <li class="nav-item" *ngIf="userLoggedIn == true">
+            <button class="nav-link btn" (click)="logoutUser()">Logout</button>
           </li>
         </ul>
       </div>

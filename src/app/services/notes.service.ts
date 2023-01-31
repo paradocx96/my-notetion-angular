@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 export class NotesService {
 
   baseApiUrl: string = environment.baseApiUrl;
-  bearerToken: string = environment.bearerToken;
+  bearerToken: string | any = localStorage.getItem('token');
 
   constructor(private http: HttpClient) {
   }
@@ -40,8 +40,8 @@ export class NotesService {
   }
 
   deleteNoteById(id: string): Observable<NoteSingle> {
-    return this.http.delete<NoteSingle>(this.baseApiUrl+'/api/notes/delete/'+id, {
-      headers:{Authorization: this.bearerToken}
+    return this.http.delete<NoteSingle>(this.baseApiUrl + '/api/notes/delete/' + id, {
+      headers: {Authorization: this.bearerToken}
     })
   }
 }
