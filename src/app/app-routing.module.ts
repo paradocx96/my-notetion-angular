@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorPageComponent} from "./components/status/error-page/error-page.component";
 import {HomeComponent} from "./components/home/home.component";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'notes',
-    loadChildren: () => import('./components/notes/notes.module').then(m => m.NotesModule)
+    loadChildren: () => import('./components/notes/notes.module').then(m => m.NotesModule),
+    canActivate:[AuthGuardService]
   },
   {
     path: 'auth',

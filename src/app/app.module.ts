@@ -8,6 +8,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavigationBarComponent} from './components/navigation/navigation-bar/navigation-bar.component';
 import {ErrorPageComponent} from './components/status/error-page/error-page.component';
 import { HomeComponent } from './components/home/home.component';
+import {AuthGuardService} from "./services/auth-guard.service";
+import {AuthService} from "./services/auth.service";
+import {NotesService} from "./services/notes.service";
 
 
 @NgModule({
@@ -24,7 +27,11 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    NotesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
