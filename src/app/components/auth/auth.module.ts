@@ -16,11 +16,11 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent
   ],
-    imports: [
-        CommonModule,
-        [RouterModule.forChild(routes)],
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    [RouterModule.forChild(routes)],
+    FormsModule
+  ]
 })
 
 export class AuthModule {
