@@ -7,13 +7,15 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavigationBarComponent} from './components/navigation/navigation-bar/navigation-bar.component';
 import {ErrorPageComponent} from './components/status/error-page/error-page.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
