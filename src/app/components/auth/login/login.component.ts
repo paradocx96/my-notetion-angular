@@ -24,15 +24,18 @@ export class LoginComponent implements OnInit {
   login() {
     console.log(this.loginRequest);
 
-    this.authService.authLogin(this.loginRequest).subscribe({
-      next: (res) => {
-        console.log(res);
-        this.router.navigate(['/'])
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    })
+    if (this.loginRequest.username != '' && this.loginRequest.password != '') {
+      this.authService.authLogin(this.loginRequest).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.router.navigate(['/'])
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      });
+    } else {
+      alert('Please fill all the fields!')
+    }
   }
-
 }
