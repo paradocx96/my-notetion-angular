@@ -11,32 +11,13 @@
 
 ## Installation and Setup
 
-- Setup environment
+1. Clone the repository
+2. Install dependencies with `yarn install`
+3. Run the development server with `ng serve` and navigate to `http://localhost:4200/`
+4. Run build with `ng build`
+5. Run tests with `ng test`
+6. Run e2e tests with `ng e2e`
 
-```
-yarn install
-```
+## Backend API
 
-- Development server
-
-```
-ng serve
-```
-
-- Build
-
-```
-ng build
-```
-
-- Unit tests
-
-```
-ng test
-```
-
-- End-to-end tests
-
-```
-ng e2e
-```
+The backend API is available at [my-notetion-api-express](https://github.com/paradocx96/my-notetion-api-express)
